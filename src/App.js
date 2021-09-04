@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Logout from "./pages/status/Logout";
 import Transaksi from "./pages/transaksi/Transaksi";
 import AuthorizedRoute from "./AuthorizedRoute";
+import RestrictedWrapper from "./RestrictedWrapper";
 import { AuthorizedContextProvider } from "./AuthorizedContext";
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
     <AuthorizedContextProvider>
       <Router>
         <Switch>
-          <Route path="/signin" exact component={Login} />
+          <Route path="/signin" exact>
+            <RestrictedWrapper>
+              <Login />
+            </RestrictedWrapper>
+          </Route>
           <AuthorizedRoute
             path="/transaksi"
             exact

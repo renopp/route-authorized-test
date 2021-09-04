@@ -18,6 +18,12 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+        title: 'Masuk',
+        path: '/signin',
+        icon: <AiIcons.AiFillHome/>,
+        cName: 'nav-text' 
+    },
+    {
         title: 'Keluar',
         path: '/signout',
         icon: <FaIcons.FaSignOutAlt />,
